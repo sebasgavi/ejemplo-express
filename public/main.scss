@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+div, section, header {
+  box-sizing: border-box;
+}
+
+#main-header{
+  position: relative;
+  overflow: hidden;
+  &:before{
+    content: '';
+    position: absolute;
+    background-image: url(https://www.highreshdwallpapers.com/wp-content/uploads/2013/02/Sauron.jpg);
+    background-size: 100%;
+    background-position: center;
+    top: -10px;
+    left: -10px; 
+    right: -10px;
+    bottom: -10px;
+    filter: blur(4px);
+    transition: all .4s .1s ease;
+  }
+  h1{
+    margin: 0;
+    position: relative;
+    padding: 10rem 2rem;
+    text-align: center;
+    font-size: 3.5em;
+    color: white;
+    background: fade-out(black, .6);
+    text-shadow: 0px 2px 30px fade-out(black, .6);
+    transition: all .3s ease;
+  }
+  &:hover{
+    &:before{
+      filter: blur(0px);
+      background-size: 104%;
+    }
+    h1{
+      opacity: 0;
+      filter: blur(4px);
+    }
+  }
+}
+
+.content{
+  padding: 2rem 0 0;
+  width: 980px;
+  margin: auto;
+  &:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+$gutter: 10px;
+.row{
+  margin: 0 -$gutter;
+}
+
+.col{
+  width: 25%;
+  padding: 0 $gutter;
+  float: left;
+}
+
+.books{
+  padding-bottom: 4rem;
+}
+
+.book{
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #E0E0E0;
+  overflow: hidden;
+  img{
+    max-width: 100%;
+  }
+  header,
+  .info,
+  a{
+    padding: 8px 10px;
+  }
+  header{
+    color: white;
+    background: #1E88E5;
+    //font-weight: bold;
+  }
+  .info{
+    margin: 6px 0;
+  }
+  footer{
+    a{
+      background: #E0E0E0;
+      display: block;
+      text-decoration: none;
+      color: black;
+      &:hover{
+        background: darken(#E0E0E0, 10%);
+      }
+    }
+  }
+}

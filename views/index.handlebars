@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  
+  <div id="wrapper">
+    <header id="main-header">
+      <h1>{{titulo}}</h1>
+    </header>
+
+    <section class="content summary">
+      <p>
+        {{#if img}}<img src="{{img}}">{{/if}}
+        The story begins in the Shire, where the hobbit Frodo Baggins inherits the Ring from Bilbo Baggins, his cousin and guardian. Neither hobbit is aware of the Ring's nature, but Gandalf the Grey, a wizard and an old friend of Bilbo, suspects it to be Sauron's Ring. Seventeen years later, after Gandalf confirms his guess, he tells Frodo the history of the Ring and counsels him to take it away from the Shire. Frodo sets out, accompanied by his gardener, his servant and friend, Samwise ("Sam") Gamgee, and two cousins, Meriadoc Brandybuck, called Merry, and Peregrin Took, called Pippin. They are nearly caught by the Black Riders but shake off their pursuers by cutting through the Old Forest. There they are aided by Tom Bombadil, a strange and merry fellow who lives with his wife Goldberry in the forest.
+      </p>
+    </section>
+
+    <a href="/api/quitarLibro/ghasd">eliminar libro</a>
+
+    <section class="content books">
+      <div class="row">
+
+        {{#each libros}}
+          <div class="col">
+            <article class="book">
+              <img src="{{img}}" alt="{{titulo}} - Book cover">
+              <header>{{titulo}}</header>
+              <p class="info">
+                <b>Year: </b>1937 <br>
+                <b>Pages: </b>300 
+              </p>
+              <footer><a href="/libros/{{titulo}}">Read</a></footer>
+            </article>
+          </div>
+        {{/each}}
+
+        <!--<div class="col">
+          <article class="book">
+            <img src="img/hobbit.jpg" alt="The Fellowship of the Ring - Book cover">
+            <header>The Hobbit</header>
+            <p class="info">
+              <b>Year: </b>1937 <br>
+              <b>Pages: </b>300 
+            </p>
+            <footer><a href="#">Read</a></footer>
+          </article>
+        </div>
+
+        <div class="col">
+          <article class="book">
+            <img src="img/fellowship.jpg" alt="The Fellowship of the Ring - Book cover">
+            <header>The Fellowship of the Ring</header>
+            <p class="info">
+              <b>Year: </b>1954 <br>
+              <b>Pages: </b>432 
+            </p>
+            <footer><a href="#">Read</a></footer>
+          </article>
+        </div>
+        
+        <div class="col">
+          <article class="book">
+            <img src="img/towers.jpg" alt="The Fellowship of the Ring - Book cover">
+            <header>The Two Towers</header>
+            <p class="info">
+              <b>Year: </b>1954 <br>
+              <b>Pages: </b>352 
+            </p>
+            <footer><a href="#">Read</a></footer>
+          </article>
+        </div>
+          
+        <div class="col">
+          <article class="book">
+            <img src="img/return.jpg" alt="The Fellowship of the Ring - Book cover">
+            <header>The Return of the King</header>
+            <p class="info">
+              <b>Year: </b>1955 <br>
+              <b>Pages: </b>432 
+            </p>
+            <footer><a href="#">Read</a></footer>
+          </article>
+        </div>-->
+
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
