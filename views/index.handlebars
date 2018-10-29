@@ -14,16 +14,36 @@
       <h1>{{titulo}}</h1>
     </header>
 
-    <section class="content summary">
+    <div class="carrito"></div>
+ 
+    <section class="content summary" id="texto">
       <p>
         {{#if img}}<img src="{{img}}">{{/if}}
         The story begins in the Shire, where the hobbit Frodo Baggins inherits the Ring from Bilbo Baggins, his cousin and guardian. Neither hobbit is aware of the Ring's nature, but Gandalf the Grey, a wizard and an old friend of Bilbo, suspects it to be Sauron's Ring. Seventeen years later, after Gandalf confirms his guess, he tells Frodo the history of the Ring and counsels him to take it away from the Shire. Frodo sets out, accompanied by his gardener, his servant and friend, Samwise ("Sam") Gamgee, and two cousins, Meriadoc Brandybuck, called Merry, and Peregrin Took, called Pippin. They are nearly caught by the Black Riders but shake off their pursuers by cutting through the Old Forest. There they are aided by Tom Bombadil, a strange and merry fellow who lives with his wife Goldberry in the forest.
       </p>
     </section>
 
-    <a href="/api/quitarLibro/ghasd">eliminar libro</a>
+    <a href="#" class="btn-eliminar">eliminar libro</a>
 
-    <section class="content books">
+    <form>
+      <h2>Formulario para crear libro</h2>
+      <input type="text" name="nombre" class="input-nombre" placeholder="nombre">
+      <input type="text" name="img" class="input-img" placeholder="imagen">
+      <input type="text" name="paginas" class="input-paginas" placeholder="páginas">
+
+      <button class="btn-enviar">Enviar</button>
+    </form>
+
+
+    <form action="/" method="GET">
+      <h2>Formulario para filtrar por páginas</h2>
+      <input type="number" name="paginas">
+
+      <button type="submit">Filtar</button>
+    </form>
+
+
+    <section class="content books" id="lista-de-libros">
       <div class="row">
 
         {{#each libros}}
@@ -32,10 +52,10 @@
               <img src="{{img}}" alt="{{titulo}} - Book cover">
               <header>{{titulo}}</header>
               <p class="info">
-                <b>Year: </b>1937 <br>
-                <b>Pages: </b>300 
+                <b>Year: </b>{{ano}} <br>
+                <b>Pages: </b>{{paginas}} 
               </p>
-              <footer><a href="/libros/{{titulo}}">Read</a></footer>
+              <footer><a data-precio="{{ano}}" href="/libros/{{titulo}}">Read</a></footer>
             </article>
           </div>
         {{/each}}
@@ -91,6 +111,8 @@
       </div>
     </section>
   </div>
+
+  <script src="/scripts/home.js"></script>
 
 </body>
 </html>
